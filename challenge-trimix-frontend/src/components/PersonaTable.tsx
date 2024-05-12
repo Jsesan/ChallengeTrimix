@@ -1,5 +1,5 @@
 "use client";
-import { TABLE_COLUMNS, TABLE_STATES } from "@/constants";
+import { ROWS_PER_PAGE, TABLE_COLUMNS, TABLE_STATES } from "@/constants";
 import PersonaItem from "./PersonaItem";
 import { useSelector } from "react-redux";
 import {
@@ -35,17 +35,25 @@ const PersonaTable: React.FC = () => {
   const renderTable = () => {
     if (status === "loading" || status === "idle") {
       return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center" data-testid="loading-state">
           <Image src={LoaderSpinner} priority alt="loader-spinner" />
           <div className="text-3xl mt-2">{TABLE_STATES.loading}</div>
         </div>
       );
     } else if (personas.length === 0 && status === "success") {
       return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center" data-testid="empty-state">
           <Image src={EmptyState} priority alt="empty-icon" height={400} />
           <div className="text-3xl mt-2">{TABLE_STATES.emptyState.title}</div>
           <div className="text-xl mt-2">{TABLE_STATES.emptyState.body}</div>
+        </div>
+      );
+    } else if (status === "failure") {
+      return (
+        <div className="flex flex-col items-center" data-testid="api-failure">
+          <Image src={EmptyState} priority alt="empty-icon" height={400} />
+          <div className="text-3xl mt-2">{TABLE_STATES.apiFailure.title}</div>
+          <div className="text-xl mt-2">{TABLE_STATES.apiFailure.body}</div>
         </div>
       );
     } else {
@@ -62,7 +70,7 @@ const PersonaTable: React.FC = () => {
                 <th>{TABLE_COLUMNS.BIRTHDATE}</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody data-testid="table-body">
               {personas.map(
                 (persona: Persona, index: number) =>
                   index < size && <PersonaItem key={persona.id} {...persona} />
@@ -71,7 +79,7 @@ const PersonaTable: React.FC = () => {
           </table>
           <div className="flex text-xl justify-center gap-[5%] items-center border-t-2 border-white pt-3">
             <div className="flex items-center">
-              <div>Filas por pagina:</div>
+              <div>{ROWS_PER_PAGE}</div>
               <select
                 name="filas-x-pag"
                 className="rounded-md ml-1"
@@ -108,7 +116,11 @@ const PersonaTable: React.FC = () => {
     }
   };
 
-  return <div className="persona-table justify-center">{renderTable()}</div>;
+  return (
+    <div className="persona-table justify-center" data-testid="table-persona">
+      {renderTable()}
+    </div>
+  );
 };
 
 export default PersonaTable;

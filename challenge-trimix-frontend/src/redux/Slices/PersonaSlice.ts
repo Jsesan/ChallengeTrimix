@@ -17,39 +17,35 @@ export type PersonaState = {
 export const fetchPersonas = createAsyncThunk(
   "personas/fetchPersonas",
   async (filters: Filters, thunkApi) => {
-    try {
-      const queryParams = new URLSearchParams({
-        name: filters.nameFilter,
-        documentType: filters.docTypeFilter,
-        page: filters.page ?? "1",
-        size: filters.size ?? "5",
-      });
-      const res = await fetch(
-        `${API_BASE_URL}${PERSONA_ENDPOINT}?${queryParams}`
-      );
-      const data = await res.json();
-      const personas: Persona[] = [];
-      data.personas.forEach((p: any) =>
-        personas.push({
-          id: p.perId,
-          name: p.perNombre,
-          surname: p.perApellido,
-          birthDate: p.perFechaNacimiento,
-          docNumber: p.perNumeroDocumento,
-          docType: p.perTipoDocumento,
-        })
-      );
-      thunkApi.dispatch(
-        setTablePaginationFilters({
-          page: data.page,
-          size: data.size,
-          total: data.totalPersonas,
-        })
-      );
-      return personas;
-    } catch (err: any) {
-      return err.message;
-    }
+    const queryParams = new URLSearchParams({
+      name: filters.nameFilter,
+      documentType: filters.docTypeFilter,
+      page: filters.page ?? "1",
+      size: filters.size ?? "5",
+    });
+    const res = await fetch(
+      `${API_BASE_URL}${PERSONA_ENDPOINT}?${queryParams}`
+    );
+    const data = await res.json();
+    const personas: Persona[] = [];
+    data.personas.forEach((p: any) =>
+      personas.push({
+        id: p.perId,
+        name: p.perNombre,
+        surname: p.perApellido,
+        birthDate: p.perFechaNacimiento,
+        docNumber: p.perNumeroDocumento,
+        docType: p.perTipoDocumento,
+      })
+    );
+    thunkApi.dispatch(
+      setTablePaginationFilters({
+        page: data.page,
+        size: data.size,
+        total: data.totalPersonas,
+      })
+    );
+    return personas;
   }
 );
 

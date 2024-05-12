@@ -45,6 +45,10 @@ export const TABLE_STATES = {
     title: "No hay registros con los filtros seleccionados",
     body: `Pruebe otra combinacion de filtros o cree un nuevo registro "+ Nuevo"`,
   },
+  apiFailure: {
+    title: "La API no esta funcionando en este momento",
+    body: "Prueba de nuevo en otro momento",
+  },
   loading: "Loading...",
 };
 
@@ -65,6 +69,8 @@ export const TOAST = {
   OOPS: `Oops... ocurrio un error \nIntende de nuevo mas tarde`,
   DELETE: (id: string) => `Usuario con id:${id} eliminado con exito`,
 };
+
+export const ROWS_PER_PAGE = "Filas por pagina:";
 
 export const API_BASE_URL = "http://localhost:8080";
 export const PERSONA_ENDPOINT = "/persona";
