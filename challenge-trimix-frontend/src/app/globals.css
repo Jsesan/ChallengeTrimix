@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: rgb(109, 192, 252);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page-container {
+  @apply flex h-full min-h-screen flex-col px-8 py-8 gap-6;
+}
+
+.control-section {
+  background-color: rgb(182, 222, 250);
+  @apply flex flex-col px-8 py-8 rounded-md gap-5;
+}
+
+.persona-table {
+  background-color: rgb(182, 222, 250);
+  @apply flex h-full px-8 py-8 rounded-md gap-5;
+}
+
+.persona-form{
+  background-color: rgb(182, 222, 250);
+  @apply flex flex-col h-fit px-8 py-8 rounded-md gap-5;
+}
+
+.control-header {
+  @apply flex flex-row justify-between w-full h-fit;
+}
+
+.nuevo-button {
+  background-color: rgb(17, 168, 42);
+  @apply p-3 flex items-center rounded-lg text-xl;
+}
+
+.save-button {
+  background-color: rgb(17, 168, 42);
+  @apply p-3 flex items-center rounded-lg text-xl;
+}
+
+.filters-section {
+  @apply flex items-center gap-10;
+}
+
+.buscar-button{
+  background-color: blue;
+}
+
+.back-button{
+  background-color: blue;
+}
+
+.edit-button{
+  background-color: blue;
+}
+
+.cancelar-button{
+  background-color: blue;
+}
+
+.arrow-page-button{
+  background-color: blue;
+  min-width: 0px;
+  @apply font-bold p-1 text-white rounded-md;
+}
+
+.arrow-page-button:disabled{
+  background-color: rgba(0,0,255,0.6);
+  min-width: 0px;
+  @apply font-bold p-1 text-white rounded-md;
+}
+
+.delete-button{
+  background-color: red;
+}
+
+.confirmar-button{
+  background-color: red;
+}
+
+.modal{
+  background-color: rgba(0,0,0,.60);
+  @apply fixed z-[1000] top-0 left-0 w-full min-h-screen flex flex-col items-center justify-center;
+}
+
+.toast{
+  @apply p-3 text-2xl min-w-fit text-center;
+}
+
+button{
+  color: white;
+  @apply text-xl min-w-40 rounded-xl min-h-8 p-3 flex items-center gap-3 justify-center font-semibold;
+}
+
+button:active{
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+}
+
+button:disabled{
+  box-shadow: none;
+  transform: translate(0px);
+}
+
+th {
+  @apply h-fit p-1;
+}
+
+td {
+  @apply h-fit py-3 text-center;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
