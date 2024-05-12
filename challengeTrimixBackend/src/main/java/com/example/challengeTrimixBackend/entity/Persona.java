@@ -101,4 +101,15 @@ public class Persona {
     public void setPerTipoDocumento(TipoDocumento perTipoDocumento) {
         this.perTipoDocumento = perTipoDocumento;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "perApellido='" + perApellido + '\'' +
+                ", perFechaNacimiento=" + perFechaNacimiento +
+                ", perNombre='" + perNombre + '\'' +
+                ", perNumeroDocumento=" + perNumeroDocumento +
+                ", perTipoDocumento=" + perTipoDocumento +
+                '}';
+    }
 }

@@ -4,7 +4,6 @@ import com.example.challengeTrimixBackend.entity.PersonaResponse;
 import com.example.challengeTrimixBackend.entity.TipoDocumento;
 import com.example.challengeTrimixBackend.entity.Persona;
 import com.example.challengeTrimixBackend.repository.PersonaRepository;
-import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;

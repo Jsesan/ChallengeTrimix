@@ -45,4 +45,14 @@ public class PersonaResponse {
     public void setTotalPersonas(long totalPersonas) {
         this.totalPersonas = totalPersonas;
     }
+
+    @Override
+    public String toString() {
+        return "PersonaResponse{" +
+                "personas=" + personas +
+                ", page=" + page +
+                ", size=" + size +
+                ", totalPersonas=" + totalPersonas +
+                '}';
+    }
 }
