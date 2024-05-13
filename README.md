@@ -51,8 +51,10 @@ Se utilizo como base de datos H2 para simplificar el desarrollo.
 
 ## Imagenes DockerHub
 
-El docker compose "rescata" las siguiente imagenes de dockerHub
+El docker compose utiliza las siguiente imagenes de dockerHub
+
 [Imagen Frontend](https://hub.docker.com/repository/docker/jsesan/challenge-trimix-fe/general)
+
 [Imagen Backend](https://hub.docker.com/repository/docker/jsesan/challenge-trimix-be/general)
 
 ## Como ejecutar los tests
