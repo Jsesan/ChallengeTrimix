@@ -19,6 +19,8 @@ En este repositorio presento mi solucion al challenge de Trimix
 <img src="https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/>
 </div>
 
+Se utilizo como base de datos H2 para simplificar el desarrollo.
+
 ### Tanto FE como BE
 <div>
 <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
@@ -86,5 +88,29 @@ Encontrará la prueba unitaria en...
                 |
                 `--PersonaResourceTest
 ```
+## Paginas/Estados de la aplicacion (FrontEnd POV)
+
+### API Caida
+<img width="1418" alt="image" src="https://github.com/Jsesan/ChallengeTrimix/assets/63931150/4fb1af72-fd31-4151-bd7a-2a650b522c06">
+
+### Cargando registros
+<img width="1418" alt="Screenshot 2024-05-13 at 12 52 44 AM" src="https://github.com/Jsesan/ChallengeTrimix/assets/63931150/1b015ff3-9301-4ef4-ae48-f8df8bfd1c30">
+
+### Con Registros
+<img width="1418" alt="image" src="https://github.com/Jsesan/ChallengeTrimix/assets/63931150/cab09dbe-d866-4818-9ca5-89bb4d68e945">
+
+### Cargar/Editar Persona
+<img width="1418" alt="image" src="https://github.com/Jsesan/ChallengeTrimix/assets/63931150/ec14fe4b-ae0c-4c40-9b14-5880e2545705">
+
+### Modal de confirmacion para borrar
+<img width="1418" alt="image" src="https://github.com/Jsesan/ChallengeTrimix/assets/63931150/f2f5ef03-cba0-4598-968b-388f3921f8da">
+
+### Sin personas
+<img width="1418" alt="image" src="https://github.com/Jsesan/ChallengeTrimix/assets/63931150/5c573997-05fe-40b6-981a-5e4d3033a5b0">
+
+
+
+
+
 
 
