@@ -1,4 +1,4 @@
-# ChallengeTrimix ABM Personas
+# ChallengeTrimix ABM Personas :bust_in_silhouette:
 
 En este repositorio presento mi solucion al challenge de Trimix
 
